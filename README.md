@@ -1,5 +1,8 @@
 # career-ops-india
 
+<img width="2848" height="1472" alt="Gemini_Generated_Image_ld8wb5ld8wb5ld8w" src="https://github.com/user-attachments/assets/8ccae6b8-b62d-4264-ad81-e16baf64f6da" />
+
+
 > AI-powered job search pipeline for India -- built on Claude Code. For experienced professionals and students alike.
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-000?style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
