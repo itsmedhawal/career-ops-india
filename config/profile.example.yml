@@ -1,71 +1,136 @@
-# Career-Ops Profile Configuration
+# career-ops-india Profile Configuration
 # Copy this file to config/profile.yml and fill in your details.
 # This is the single source of truth for your personal data across all modes.
+# All compensation figures in LPA (Lakhs Per Annum) unless noted.
 
 candidate:
-  full_name: "Jane Smith"
-  email: "jane@example.com"
-  phone: "+1-555-0123"
-  location: "San Francisco, CA"
-  linkedin: "linkedin.com/in/janesmith"
-  portfolio_url: "https://janesmith.dev"
-  github: "github.com/janesmith"
-  twitter: "https://x.com/janesmith"
-  # (Optional) Canva resume design ID for visual CV generation via /career-ops pdf.
-  # Find it in your Canva design URL: https://www.canva.com/design/DAxxxxxxx/...
-  # The ID starts with "D" and is 11 characters long.
+  full_name: "XXXXX XXXXXXX"
+  email: "XXXXXX@example.com"
+  phone: "+91-xxxxx-xxxxx"
+  location: "Bangalore, Karnataka"
+  linkedin: "linkedin.com/in/XXXXXX"
+  portfolio_url: "https://XXXXXX.dev"
+  github: "github.com/XXXXX"
+  twitter: "https://x.com/XXXXXX"
+  # (Optional) Canva resume design ID for visual CV generation
   # canva_resume_design_id: "DAxxxxxxxxx"
 
 target_roles:
   # Your North Star roles — what you're optimizing for
   primary:
-    - "Senior AI Engineer"
-    - "Staff ML Engineer"
-  # Archetypes help the evaluation system score fit
+    - "Senior ML Engineer"
+    - "LLMOps Engineer"
+  secondary:
+    - "AI Product Manager"
+
+  # Archetypes from the India fork archetype system
   archetypes:
-    - name: "AI/ML Engineer"
-      level: "Senior/Staff"
-      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
-    - name: "AI Product Manager"
+    - name: "LLMOps / GenAI Engineer"
       level: "Senior"
-      fit: "secondary"
-    - name: "Solutions Architect"
+      fit: "primary"        # primary = dream role, secondary = good fit, adjacent = stretch
+    - name: "AI/ML Engineer"
+      level: "Senior"
+      fit: "primary"
+    - name: "AI Product Manager"
       level: "Mid-Senior"
-      fit: "adjacent"
+      fit: "secondary"
+
+  # Sector preferences — affects portal scanning and scoring
+  sectors:
+    product_startups:
+      priority: "primary"
+      min_stage: "Series A"    # Early Startup / Series A / Series B / Series C+ / Any
+    gccs:
+      priority: "secondary"
+      preferred_parents: []    # e.g. ["Google", "Microsoft", "JPMorgan"] or leave empty for all
+    ai_native:
+      priority: "primary"      # e.g. Sarvam, Krutrim, Yellow.ai
+    consulting:
+      priority: "not_interested"
 
 narrative:
-  # Your professional headline (1 line)
-  headline: "ML Engineer turned AI product builder"
-  # Your exit story — what makes you unique
-  exit_story: "Built and sold my SaaS after 5 years. Now focused on applied AI at scale."
-  # Your top 3-5 superpowers
+  # Your professional headline (1 line — appears in CV summary)
+  headline: "ML Engineer building production AI systems"
+  
+  # Your professional story — what makes you unique
+  # This frames cover letters, STAR stories, and PDF summaries
+  exit_story: "5 years building ML systems at scale, from experimentation to production. Currently looking for a role where I can work on GenAI/LLM infrastructure with real business impact."
+  
+  # Your top 3–5 superpowers — what you do better than most
   superpowers:
-    - "End-to-end ML pipelines"
-    - "Fast prototyping (idea to prod in 2 weeks)"
-    - "Cross-functional communication"
-  # Proof points — projects, articles, case studies with measurable impact
+    - "End-to-end ML: feature engineering to production deployment"
+    - "LLM evaluation frameworks and observability"
+    - "Fast iteration — prototype to prod in 2–3 weeks"
+    - "Communicating technical tradeoffs to non-technical stakeholders"
+
+  # Proof points — projects, articles, or case studies with measurable impact
+  # Be specific: use ₹, %, latency numbers, user counts, team sizes
   proof_points:
-    - name: "Project Alpha"
-      url: "https://janesmith.dev/project-alpha"
-      hero_metric: "Reduced inference latency 40%"
-    - name: "Open Source Tool"
-      url: "https://github.com/janesmith/tool"
-      hero_metric: "2K+ GitHub stars"
-  # Optional: dashboard/demo URL with credentials
+    - name: "RAG Pipeline for Internal Knowledge Base"
+      url: ""    # optional
+      hero_metric: "Reduced support ticket resolution time by 40%, serving 500+ users"
+    - name: "Model Serving Optimization"
+      url: ""
+      hero_metric: "Cut p95 inference latency from 3.2s to 380ms, saving ₹8L/month in infra costs"
+
+  # Optional: live demo or dashboard
   # dashboard:
-  #   url: "https://janesmith.dev/demo"
+  #   url: "https://XXXXXXX.dev/demo"
   #   password: "demo-2026"
 
 compensation:
-  target_range: "$150K-200K"     # Your target total comp
-  currency: "USD"
-  minimum: "$120K"               # Walk-away number
-  location_flexibility: "Remote preferred, 1 week/month on-site possible"
+  # All figures in LPA (Lakhs Per Annum)
+  target_range: "28–38 LPA"
+  currency: "INR"
+  minimum: "24 LPA"              # Walk-away number — never shared in applications
+  current_ctc: "22 LPA"         # For negotiation context — share only if asked
+  
+  # Structure preferences
+  fixed_variable_preference: "prefer 90%+ fixed"
+  esop_importance: "important for startups, nice-to-have for GCCs"
+  bond_acceptable: false         # true / false / "up to 6 months"
+  
+  # Comp research sources to use (in order of preference)
+  research_sources:
+    - "AmbitionBox"
+    - "Glassdoor India"
+    - "Levels.fyi"
+    - "Blind"
+    - "LinkedIn Salary"
 
 location:
-  country: "United States"
-  city: "San Francisco"
-  timezone: "PST"
-  visa_status: "No sponsorship needed"
-  # For remote roles outside your country:
-  # onsite_availability: "1 week/month in any city"
+  country: "India"
+  city: "Bangalore"
+  state: "Karnataka"
+  timezone: "IST (UTC+5:30)"
+  
+  # Relocation
+  open_to_relocation: false
+  relocation_cities: []          # e.g. ["Mumbai", "Hyderabad"] if open_to_relocation is true
+  
+  # Work mode preference
+  work_mode_preference: "remote-first"   # full-remote / remote-first / hybrid / wfo
+  
+  # Notice period
+  notice_period_days: 60
+  notice_negotiable: true        # Can employer buy out notice period?
+  
+  # Visa / work authorization
+  work_authorization: "Indian citizen, no sponsorship needed"
+  open_to_international_remote: true   # Open to remote roles at international companies?
+
+# Ghost Likelihood Score settings
+gls:
+  warning_threshold: 50          # Warn before applying if GLS >= this value
+  auto_skip_threshold: 80        # Auto-flag as SKIP if GLS >= this (still shows report)
+  trusted_sources:               # Sources that get 0 ghost penalty regardless
+    - "company_direct"
+    - "greenhouse"
+    - "ashby"
+    - "lever"
+
+# Interview preferences
+interview:
+  preferred_rounds: 4            # Flag if JD mentions more than this
+  notice_period_statement: "My notice period is 60 days, negotiable with buyout."
+  ctc_disclosure: "share_on_request"   # always / share_on_request / never
