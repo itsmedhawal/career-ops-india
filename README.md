@@ -109,6 +109,55 @@ The system classifies every job into one of 7 archetypes calibrated for the Indi
 
 ---
 
+## Prerequisites
+
+Before you start, make sure you have the following:
+
+<details>
+<summary>Click to expand</summary>
+
+### Required
+
+| Requirement | Version | How to check | Install |
+|---|---|---|---|
+| Claude Code | Latest | `claude --version` | [docs.anthropic.com](https://docs.anthropic.com) |
+| Node.js | 18+ | `node --version` | [nodejs.org](https://nodejs.org) |
+| npm | 8+ | `npm --version` | Comes with Node.js |
+| Git | Any | `git --version` | [git-scm.com](https://git-scm.com) |
+
+### Claude Plan
+
+career-ops-india runs on Claude Code and requires one of:
+
+- **Claude Max** (recommended) -- best for heavy usage, fixed monthly cost
+- **Claude API** -- pay per use, good for light usage
+
+> The original author ran 740+ evaluations on a Claude Max plan with zero extra cost per evaluation. Your usage will vary.
+
+### For PDF Generation
+
+| Requirement | How to install |
+|---|---|
+| Chromium | `npx playwright install chromium` |
+
+### For the Dashboard (optional)
+
+| Requirement | Version | Notes |
+|---|---|---|
+| Go | 1.21+ | Only needed for the terminal UI dashboard |
+
+### Not Required
+
+- No database setup
+- No API keys beyond Claude
+- No Docker
+- No cloud accounts
+- Everything runs locally on your machine
+
+</details>
+
+---
+
 ## Quick Start
 
 ```bash
@@ -252,7 +301,7 @@ career-ops-india/
 
 ## About This Fork
 
-Built by [Dhawal](https://www.linkedin.com/in/dhawalshrivastava/) -- adapted from the original career-ops for jobseekers navigating the Indian AI job market across product startups, GCCs, and AI-native companies.
+Built by [Dhawal](https://github.com/itsmedhawal) -- adapted from the original career-ops for jobseekers navigating the Indian AI job market across product startups, GCCs, and AI-native companies.
 
 Contributions welcome -- especially:
 - Additional Indian companies in `portals.example.yml`
