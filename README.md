@@ -72,7 +72,7 @@ You paste a job URL or description
 | Job boards | Western (Greenhouse, Ashby, Lever) | **Indian boards: Naukri, iimjobs, Cutshort, Foundit** |
 | Company list | EU/US AI companies | **Indian companies: Razorpay, Sarvam, CRED, Zepto, GCCs** |
 | Tracker columns | 9 | 10 (adds GLS column) |
-| Language | EN / ES / DE / FR / JA | EN (Hindi support planned) |
+| Language | EN / ES / DE / FR / JA | EN (Hindi contributions welcome) |
 
 ---
 
