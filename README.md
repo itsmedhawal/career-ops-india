@@ -1,6 +1,6 @@
 # career-ops-india
 
-> AI-powered job search pipeline for India -- built on Claude Code.
+> AI-powered job search pipeline for India -- built on Claude Code. For experienced professionals and students alike.
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-000?style=flat&logo=anthropic&logoColor=white)](https://claude.ai/code)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)](https://nodejs.org)
@@ -13,11 +13,7 @@
 
 This project is a fork of **[career-ops](https://github.com/santifer/career-ops)** by [Santiago Fernández de Valderrama](https://santifer.io) -- an exceptional piece of work that Santiago built and used to evaluate 740+ job offers and land a Head of Applied AI role. The original architecture, pipeline design, PDF generation, batch processing, and HITL philosophy are entirely his.
 
-This fork adapts career-ops for the **Indian job market** with two categories of changes:
-
-**Adaptations of the original:** India-specific archetypes, an India-aware compensation framework (CTC/LPA/ESOP/bond), Fake Remote detection, GCC as a distinct company stage, and a portal scanner configured for Indian job boards and companies.
-
-**Original contribution added in this adoption:** The **Ghost Likelihood Score (GLS)** -- a 0–100 signal designed specifically for the Indian job market, where ghost postings are significantly more prevalent than in Western markets. The GLS quantifies ghost job risk across 9 weighted signals including repost patterns, source quality, JD boilerplate ratio, and company hiring signals. It runs as a pre-check before evaluation and appears independently in every report -- separate from the job fit score, so the user always sees both dimensions and decides. This feature does not exist in the original repo.
+This fork adapts career-ops for the **Indian job market**: India-specific archetypes, a Ghost Likelihood Score (GLS) for detecting ghost postings, an India-aware compensation framework (CTC/LPA/ESOP), and a portal scanner configured for Indian job boards and companies.
 
 **If you find this useful, star the original too → [santifer/career-ops](https://github.com/santifer/career-ops)**
 
@@ -72,6 +68,7 @@ You paste a job URL or description
 | Job boards | Western (Greenhouse, Ashby, Lever) | **Indian boards: Naukri, iimjobs, Cutshort, Foundit** |
 | Company list | EU/US AI companies | **Indian companies: Razorpay, Sarvam, CRED, Zepto, GCCs** |
 | Tracker columns | 9 | 10 (adds GLS column) |
+| Intern / Fresher mode | Not present | **Dedicated mode for students and recent graduates** |
 | Language | EN / ES / DE / FR / JA | EN (Hindi contributions welcome) |
 
 ---
@@ -139,7 +136,7 @@ claude   # Opens Claude Code in this directory
 
 > **First evaluations won't be perfect.** The system doesn't know you yet. Feed it context -- your CV, proof points, what you're good at, what you want to avoid. The more you give it, the better it filters. Think of it as onboarding a recruiter.
 
-See [docs/SETUP.md](docs/SETUP.md) for the full setup guide.
+See [USAGE.md](USAGE.md) for step-by-step instructions and workflow guides for both experienced professionals and students. See [docs/SETUP.md](docs/SETUP.md) for the full technical setup guide.
 
 ---
 
@@ -148,6 +145,7 @@ See [docs/SETUP.md](docs/SETUP.md) for the full setup guide.
 ```bash
 /career-ops                → Show all commands
 /career-ops {paste a JD}   → Full pipeline (GLS + evaluate + PDF + tracker)
+/career-ops intern {URL or JD}  → Internship / fresher evaluation (students and recent grads)
 /career-ops scan           → Scan Indian job boards and company pages
 /career-ops pdf            → Generate ATS-optimized CV for a role
 /career-ops batch          → Batch evaluate multiple offers in parallel
@@ -176,6 +174,35 @@ The portal scanner comes with **40+ companies** across three segments:
 **GCCs:** Google IDC, Microsoft IDC, Walmart Global Tech, JPMorgan India, Goldman Sachs Bangalore, Adobe India, Uber India, Atlassian, PayPal India, Intuit India, SAP Labs, Cisco India
 
 **Job boards searched:** Naukri, LinkedIn India, iimjobs, Cutshort, Foundit, Wellfound, Greenhouse, Ashby, Lever
+
+---
+
+## For Students & Freshers
+
+career-ops-india includes a dedicated mode for internships and entry-level roles -- a gap that the original career-ops does not address. College students in India face a completely different set of challenges than experienced professionals.
+
+```
+/career-ops intern {paste a JD or URL}
+```
+
+The intern mode has its own evaluation framework:
+
+| Dimension | What it measures |
+|---|---|
+| Project & Academic Match | Your GitHub projects, coursework, hackathons vs JD requirements |
+| Stipend | Market rate for intern/fresher role, city-adjusted, with in-hand estimate |
+| PPO Probability | Likelihood of a return offer -- often the real goal of an internship |
+| Brand Value | What this company name does for your next opportunity |
+| Learning Curve | Will you do real work or fetch data for 3 months? |
+| Red Flags | Unpaid, bond agreements, vague scope, commission-only "internships" |
+
+**Platforms covered:** Internshala, LetsIntern, HelloIntern, Unstop, LinkedIn Early Careers, and company-specific programs (Google STEP, Microsoft Engage, Goldman Sachs Analyst, and more).
+
+**Both tracks supported:**
+- **On-campus:** Company visiting your college, placement cell involved
+- **Off-campus:** Applying directly, no placement cell support
+
+The GLS is calibrated differently for intern roles -- posting age threshold is tighter (45 days vs 60 days) and intern-specific ghost signals are added (unpaid roles, vague JDs, 500+ applicants with no response).
 
 ---
 
