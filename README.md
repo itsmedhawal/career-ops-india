@@ -1,5 +1,10 @@
 # career-ops-india
 
+> 🌐 **Try the app:** [coi-app.pages.dev](https://coi-app.pages.dev) — score any job in 60 seconds, right in your browser. Zero setup.
+>
+>  
+
+
 <img width="2848" height="1472" alt="Gemini_Generated_Image_ld8wb5ld8wb5ld8w" src="https://github.com/user-attachments/assets/8ccae6b8-b62d-4264-ad81-e16baf64f6da" />
 
 
@@ -19,6 +24,7 @@
 | **Best for** | Batch scanning, PDF generation, automation | On-the-go evaluation, mobile, pipeline tracking |
 | **Install** | `npm install` | Open URL |
 | **Link** | This repo | [itsmedhawal.github.io/career-ops-india-app](https://itsmedhawal.github.io/career-ops-india-app) |
+
 
 **The intended flow:**
 CLI discovers and batch-scans roles → App evaluates, scores, and tracks your pipeline on mobile.
@@ -118,7 +124,11 @@ See [USAGE.md](USAGE.md) for full workflow and [FORK_SETUP.md](FORK_SETUP.md) fo
 **Santiago Fernández de Valderrama** -- creator of [career-ops](https://github.com/santifer/career-ops), the engine this fork is based on. Architecture, pipeline, PDF generation, batch processing, and HITL philosophy are his work.
 
 ---
+## Feedback
+This repo hosts community feedback for both the CLI pipeline and [COI-App](https://coi-app.pages.dev). 
+Use [Discussions](https://github.com/itsmedhawal/career-ops-india/discussions) to share bug reports, feature requests, or general feedback.
 
+---
 ## Contribute
 
 Open source under MIT. Contributions welcome:
